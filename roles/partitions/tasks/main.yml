@@ -19,6 +19,7 @@
     pvs: "{{ item.pv }}"
     vg: "{{ item.vg }}"
     state: "{{ item.state | default('present') }}"
+  with_items: "{{ partitions_vg }}"
 
 - name: Setup logical volume (lvm)
   lvol:
@@ -27,4 +28,4 @@
     size: "{{ item.size }}"
     opts: "{{ item.opts | default(omit) }}"
     state: "{{ item.state | default('present') }}"
-  with_items: "{{ partitions }}"
+  with_items: "{{ partitions_lv }}"
