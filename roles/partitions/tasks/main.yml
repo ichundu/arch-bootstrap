@@ -16,7 +16,7 @@
 
 - name: Setup volume group
   lvg:
-    pvs: "{{ item.pv }}"
+    pvs: "{{ item.pvs }}"
     vg: "{{ item.vg }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ partitions_vg }}"
