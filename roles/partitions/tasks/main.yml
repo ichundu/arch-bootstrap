@@ -25,4 +25,4 @@
     part_end: "{{ item.part_end | default(omit) }}"
     part_type: "{{ item.part_type | default('primary') }}"
     state: "{{ item.state | default('present') }}"
-  with_items: "{{ parted_partition1 }}"
+  with_items: "{{ parted_partition2 }}"
