@@ -16,6 +16,15 @@
 
 - name: Setup volume group
   lvg:
-    pvs: /dev/sda2
-    vg: vg_arch
-    state: present
+    pvs: "{{ item.pv }}"
+    vg: "{{ item.vg }}"
+    state: "{{ item.state | default('present') }}"
+
+- name: Setup logical volume (lvm)
+  lvol:
+    lv: "{{ item.lv }}"
+    vg: "{{ item.vg }}"
+    size: "{{ item.size }}"
+    opts: "{{ item.opts | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ partitions }}"

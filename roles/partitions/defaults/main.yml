@@ -8,10 +8,9 @@ partitions:
     label: "gpt"
     flags:
       - boot
-    #part_start: "0%"
+    part_start: "0%"
     part_end: "512MB"
     part_type: "primary"
-    state: "present"
 
   - number: 2
     name: "system"
@@ -20,6 +19,18 @@ partitions:
     flags:
       - lvm
     part_start: "513MB"
-    #part_end: "100%"
+    part_end: "100%"
     part_type: "primary"
-    state: "present"
+
+partitions_vg:
+  - vg: "vg_arch"
+    pvs: "/dev/sda2"
+
+partitions_lv:
+  - lv: "lv_swap"
+    vg: "vg_arch"
+    size: "1G"
+
+  - lv: "lv_root"
+    vg: "vg_arch"
+    size: "100%FREE"
