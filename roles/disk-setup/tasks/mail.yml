@@ -1,0 +1,6 @@
+---
+
+- include: partitions.yml
+  tags: partitions
+
+- include: mounts.yml

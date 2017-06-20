@@ -1,0 +1,22 @@
+---
+
+- name: Mount root partition on /mnt
+  mount:
+    boot: False
+    fstype: ext4
+    src: /dev/mapper/vg_arch-lv_root
+    path: /mnt
+    state: mounted
+
+- name: Ensure /mnt/boot directory exists
+  file:
+    path: /mnt/boot
+    state: directory
+
+- name: Mount /dev/sda1 on /mnt/boot
+  mount:
+    boot: False
+    fstype: ext4
+    src: /dev/sda1
+    path: /mnt/boot
+    state: mounted
