@@ -34,6 +34,7 @@ partitions_lv:
   - lv: "lv_root"
     vg: "vg_arch"
     size: "100%FREE"
+    force: true
 
 partitions_ext4:
   - /dev/sda1
