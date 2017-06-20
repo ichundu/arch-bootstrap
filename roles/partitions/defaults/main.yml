@@ -8,7 +8,7 @@ parted_partitions:
     label: "gpt"
     flags:
       - boot
-    part_start: "0%"
+    #part_start: "0%"
     part_end: "512MB"
     part_type: "primary"
     state: "present"
@@ -19,6 +19,6 @@ parted_partitions:
     flags:
       - lvm
     part_start: "513MB"
-    part_end: "100%"
+    #part_end: "100%"
     part_type: "primary"
     state: "present"
