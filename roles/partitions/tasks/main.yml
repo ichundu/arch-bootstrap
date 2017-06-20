@@ -1,15 +1,21 @@
 ---
 # tasks file for partitions
 
-- name: Partition disk 1
-  parted:
-    number: "{{ item.number | int}}"
-    name: "{{ item.name | default(omit) }}"
-    device: "{{ item.device }}"
-    label: "{{ item.label | default('gpt') }}"
-    flags: "{{ item.flags | default(omit) }}"
-    part_start: "{{ item.part_start | default(omit) }}"
-    part_end: "{{ item.part_end | default(omit) }}"
-    part_type: "{{ item.part_type | default('primary') }}"
-    state: "{{ item.state | default('present') }}"
-  with_items: "{{ parted_partitions }}"
+# - name: Partition disk 1
+#   parted:
+#     number: "{{ item.number | int}}"
+#     name: "{{ item.name | default(omit) }}"
+#     device: "{{ item.device }}"
+#     label: "{{ item.label | default('gpt') }}"
+#     flags: "{{ item.flags | default(omit) }}"
+#     part_start: "{{ item.part_start | default(omit) }}"
+#     part_end: "{{ item.part_end | default(omit) }}"
+#     part_type: "{{ item.part_type | default('primary') }}"
+#     state: "{{ item.state | default('present') }}"
+#   with_items: "{{ partitions }}"
+
+- name: Setup volume group
+  lvg:
+    pvs: /dev/sda2
+    vg: vg_arch
+    state: present

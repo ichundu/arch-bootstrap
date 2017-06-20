@@ -1,7 +1,7 @@
 ---
 # defaults file for partitions
 
-parted_partitions:
+partitions:
   - number: 1
     name: "boot"
     device: "/dev/sda"
