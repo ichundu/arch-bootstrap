@@ -1,0 +1,9 @@
+---
+# defaults file for roles/pacstrap
+
+pacstrap_pkgs:
+  - base
+  - base-devel
+  - git
+  - vim
+  - ansible

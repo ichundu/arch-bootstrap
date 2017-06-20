@@ -1,0 +1,6 @@
+---
+# tasks file for roles/pacstrap
+
+- name: Pacstrap - install Arch Linux
+  command: "pacstrap /mnt {{ item | join(' ') }}"
+  with_items: "{{ pacstrap_pkgs }}"

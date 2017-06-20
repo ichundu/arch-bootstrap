@@ -38,3 +38,7 @@
 - name: Format swap partitions
   command: "mkswap {{ item }}"
   with_items: "{{ partitions_swap }}"
+
+- name: Activate swap
+  command: "swapon {{ item }}"
+  with_items: "{{ partitions_swap }}"
