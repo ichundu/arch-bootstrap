@@ -6,7 +6,8 @@ parted_partitions:
     name: "boot"
     device: "/dev/sda"
     label: "gpt"
-    flags: "boot"
+    flags:
+      - boot
     part_start: "0%"
     part_end: "512MB"
     part_type: "primary"
@@ -15,7 +16,8 @@ parted_partitions:
     name: "system"
     device: "/dev/sda"
     label: "gpt"
-    flags: "lvm"
+    flags:
+      - lvm
     part_start: "513MB"
     part_end: "100%"
     part_type: "primary"
