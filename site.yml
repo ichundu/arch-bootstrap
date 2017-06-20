@@ -1,0 +1,8 @@
+---
+
+- name: Arch linux preinstallation setup
+  hosts: localhost
+  connection: local
+
+  roles:
+    - partitions
