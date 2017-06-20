@@ -6,6 +6,7 @@
     number: "{{ item.number }}"
     device: "{{ item.device }}"
     label: "{{ item.label | default('gpt') }}"
+    flags: "{{ item.flags }}"
     part_start: "{{ item.part_start }}"
     part_end: "{{ item.part_end }}"
     part_type: "{{ item.part_type | default('primary') }}"
