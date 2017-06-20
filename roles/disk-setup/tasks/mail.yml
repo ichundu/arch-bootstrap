@@ -4,3 +4,4 @@
   tags: partitions
 
 - include: mounts.yml
+  tags: mounts
