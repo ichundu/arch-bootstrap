@@ -1,7 +1,7 @@
 ---
 # defaults file for partitions
 
-parted_partitions:
+parted_partition1:
   - number: 1
     name: "boot"
     device: "/dev/sda"
@@ -12,6 +12,8 @@ parted_partitions:
     part_end: "512MB"
     part_type: "primary"
     state: "present"
+
+parted_partition2:
   - number: 2
     name: "system"
     device: "/dev/sda"
