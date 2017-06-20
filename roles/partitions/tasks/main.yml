@@ -26,7 +26,7 @@
     lv: "{{ item.lv }}"
     vg: "{{ item.vg }}"
     size: "{{ item.size }}"
-    force: "{{ item.force }}"
+    force: "{{ item.force | default(false) }}"
     opts: "{{ item.opts | default(omit) }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ partitions_lv }}"
