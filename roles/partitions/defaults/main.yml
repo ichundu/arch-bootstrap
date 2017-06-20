@@ -3,7 +3,8 @@
 
 parted_partitions:
   - number: "1"
-    device: "/dev/sda"
+    name: "boot"
+    device: "/dev/sda1"
     label: "gpt"
     flags: "boot"
     part_start: "0%"
