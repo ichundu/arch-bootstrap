@@ -10,3 +10,4 @@
     part_end: "{{ item.part_end }}"
     part_type: "{{ item.part_type | default('primary') }}"
     state: "{{ item.state | default('present') }}"
+  with_items: "{{ parted_partitions }}"
