@@ -30,6 +30,7 @@ partitions_lv:
   - lv: "lv_swap"
     vg: "vg_arch"
     size: "1G"
+    force: false
 
   - lv: "lv_root"
     vg: "vg_arch"
