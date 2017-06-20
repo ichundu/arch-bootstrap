@@ -34,3 +34,10 @@ partitions_lv:
   - lv: "lv_root"
     vg: "vg_arch"
     size: "100%FREE"
+
+partitions_ext4:
+  - /dev/sda1
+  - /dev/mapper/vg_arch-lv_root
+
+partitions_swap:
+  - /dev/mapper/vg_arch-lv_swap

@@ -29,3 +29,11 @@
     opts: "{{ item.opts | default(omit) }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ partitions_lv }}"
+
+- name: Format ext4 partitions
+  command: "mkfs.ext4 {{ item }}"
+  with_items: "{{ partitions_ext4 }}"
+
+- name: Format swap partitions
+  command: "mkswap {{ item }}"
+  with_items: "{{ partitions_swap }}"
