@@ -6,4 +6,3 @@
 
   roles:
     - disk-setup
-    - pacstrap

@@ -1,0 +1,8 @@
+---
+
+- name: Install Arch Linux
+  hosts: localhost
+  remote_user: root
+
+  roles:
+    - pacstrap
